@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Script>
+        function readHTML()
+        {
+            // Use innerHTML to read and display
+            // get Menu UL item reference with ID "menu"
+
+            var UIMenu = document.getElementById("menu");
+            var textHTML = UIMenu.innerHTML;
+            var textText = UIMenu.innerText;
+            console.log("InnerHTML" + textHTML);
+            console.log("InnerText" + textText);
+            writeHTML();
+        }
+        function writeHTML()
+        {
+            //Use innerHTML to write
+            // change the list by adding additional item Item3
+            var UIMenu = document.getElementById("menu");
+            var textHTML="<Li>Item3</Li>";
+            UIMenu.innerHTML = UIMenu.innerHTML + textHTML;
+            console.log("did we add new Li Item");
+            WriteWithCreateElement(); //call createelement function
+        }
+        function WriteWithCreateElement()
+        {
+            // here we wil showcase CreateElement to add addtional items\3
+            var liItem4 = document.createElement("Li");
+            liItem4.textContent = "Item4 From CreateElement()";
+            var UIMenu = document.getElementById("menu");
+            UIMenu.appendChild(liItem4);
+            console.log("I am done");
+            var currTime = Date.now();
+            const dtime = new Date();
+            var currDate = currTime.toString()
+            console.log(currTime + "  str format  " + dtime);
+        }
+        
+    </Script>
+    <style>
+        input[type=button] {
+            background-color: blueviolet;
+            border: rgb(128, 49, 20);
+            color: cornsilk;
+            padding: 0.5em;
+            text-align: center;
+            text-decoration: cyan;
+            display: inline;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul ID="menu">
+        <li>Item1</li><li>Item2</li>
+    </ul>
+    <ul ID="menu">
+        <li>Item1</li>
+        <li>Item2</li>
+    </ul>
+    
+    <button id="btn1" onclick="readHTML()">clickMe</button>
+    
+    <iframe id="iframe1" title="iframe1"
+    width="300"
+    height="200"
+
+    src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik"></iframe>"
+    </iframe>
+
+    
+</body>
+</html>
